@@ -23,22 +23,21 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      <h1>Country Information</h1>
+    <div className="app p-6 bg-gray-100 flex flex-col items-center">
+      <h1 className="text-3xl font-bold mb-4">Country Information</h1>
       {apiData ? (
-        <div >
+        <div className="flex flex-wrap justify-center">
           {apiData.map((country) => (
-            <div key={country.cca3} >
+            <div
+              key={country.cca3}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg mx-4 my-4 flex flex-col items-center w-72 h-72"
+            >
               <img
                 src={country.flags.png}
                 alt={`Flag of ${country.name.common}`}
-               
+                className="w-full h-32 object-cover mb-4 rounded-md"
               />
-              <h3>{country.name.common}</h3>
-              <p>
-                <strong>Capital:</strong> {country.capital}
-              </p>
-            
+              <h3 className="text-xl font-semibold mb-2">{country.name.common}</h3>
             </div>
           ))}
         </div>
@@ -50,4 +49,3 @@ function App() {
 }
 
 export default App;
-
