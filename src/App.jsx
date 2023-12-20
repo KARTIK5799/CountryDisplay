@@ -26,18 +26,22 @@ function App() {
     <div className="app">
       <h1>Country Information</h1>
       {apiData ? (
-        <ul>
+        <div className="card-container">
           {apiData.map((country) => (
-            <li key={country.cca3}>
-              <strong>{country.name.common}</strong>
-              <br />
-              <span>Capital: {country.capital}</span>
-              <br />
-              <span>Population: {country.population}</span>
-              <hr />
-            </li>
+            <div key={country.cca3} className="card">
+              <img
+                src={country.flags.png}
+                alt={`Flag of ${country.name.common}`}
+                className="flag"
+              />
+              <h3>{country.name.common}</h3>
+              <p>
+                <strong>Capital:</strong> {country.capital}
+              </p>
+            
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         <p>Loading...</p>
       )}
@@ -46,3 +50,4 @@ function App() {
 }
 
 export default App;
+
