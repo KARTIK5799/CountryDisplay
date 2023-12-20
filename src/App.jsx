@@ -26,13 +26,13 @@ function App() {
     <div className="app">
       <h1>Country Information</h1>
       {apiData ? (
-        <div className="card-container">
+        <div >
           {apiData.map((country) => (
-            <div key={country.cca3} className="card">
+            <div key={country.cca3} >
               <img
                 src={country.flags.png}
                 alt={`Flag of ${country.name.common}`}
-                className="flag"
+               
               />
               <h3>{country.name.common}</h3>
               <p>
