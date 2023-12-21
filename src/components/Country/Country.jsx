@@ -37,26 +37,26 @@ const Country = () => {
       <h1 className="text-3xl font-bold mb-4">Country Information</h1>
 
       <input
-  type="text"
-  placeholder="Search by country name"
-  value={searchQuery}
-  onChange={handleSearchChange}
-  className="mb-4 p-2 border border-gray-300 rounded-md w-200" 
-/>
+        type="text"
+        placeholder="Search by country name"
+        value={searchQuery}
+        onChange={handleSearchChange}
+        className="mb-4 p-2 border border-gray-300 rounded-md w-200"
+      />
 
       {filteredCountries.length > 0 ? (
         <div className="flex flex-wrap justify-center">
           {filteredCountries.map((country) => (
             <div
               key={country.cca3}
-              className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg mx-2 my-2 flex flex-col items-center w-36 h-40" // Adjust width and height as needed
+              className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg mx-2 my-2 flex flex-col items-center w-36 h-40"
             >
               <img
                 src={country.flags.png}
                 alt={`Flag of ${country.name.common}`}
-                className="w-full h-20 object-cover mb-2 rounded-md" 
+                className="w-full h-20 object-cover mb-2 rounded-md"
               />
-              <h3 className="text-sm font-semibold mb-1">{country.name.common}</h3> 
+              <h3 className="text-sm font-semibold mb-1">{country.name.common}</h3>
             </div>
           ))}
         </div>
