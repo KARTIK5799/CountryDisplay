@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Country = () => {
   const [apiData, setApiData] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [keyValue, setKeyValue] = useState(1); // Start with 1
+  const [keyValue, setKeyValue] = useState(1); 
 
   useEffect(() => {
     const fetchData = async () => {
