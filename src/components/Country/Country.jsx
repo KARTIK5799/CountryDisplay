@@ -60,7 +60,7 @@ const Country = () => {
               ))}
             </div>
           ) : (
-            <p>No matching countries found.</p>
+            ""
           )}
         </div>
       </div>
