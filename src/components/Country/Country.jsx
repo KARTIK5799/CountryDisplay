@@ -34,9 +34,9 @@ const Country = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
         className={styles.searchInput}
       />
-      <div className={styles.flagSection} style={{ flexDirection: 'column' }}>
+      <div className={styles.flagSection} >
         {filteredCountries.map((country, index) => (
-          <div key={index} className={styles.countryContainer}>
+          <div key={index} className={styles.countryContainer} style={{ flexDirection: 'column' }}>
             <img
               src={country.flags?.png || ''}
               alt="flag"
