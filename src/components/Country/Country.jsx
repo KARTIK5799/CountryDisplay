@@ -38,7 +38,7 @@ const Country = () => {
      </div>
       <div className={styles.flagSection} >
         {filteredCountries.length > 0 ? (
-          filteredCountries.map((country, ) => (
+          filteredCountries.map((country) => (
             <div key={country.flags.png} className={styles.countryContainer} style={{ flexDirection: 'column' }}>
               <img
                 src={country.flags.png}
