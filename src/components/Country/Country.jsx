@@ -27,13 +27,15 @@ const Country = () => {
 
   return (
     <div className={styles.searchContainer} style={{ flexDirection: 'column' }}>
-      <input
+     <div>
+       <input
         type="text"
         placeholder="Search for a countries..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         className={styles.searchInput}
       />
+     </div>
       <div className={styles.flagSection} >
         {filteredCountries.length > 0 ? (
           filteredCountries.map((country, ) => (
