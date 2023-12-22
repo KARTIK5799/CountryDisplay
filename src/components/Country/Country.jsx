@@ -40,7 +40,7 @@ const Country = () => {
             <div key={country.flags.png} className={styles.countryContainer} style={{ flexDirection: 'column' }}>
               <img
                 src={country.flags.png}
-                alt={`flag`}
+                alt="flag"
                 className={styles.countryImage}
               />
               <div className={styles.countryName}>
