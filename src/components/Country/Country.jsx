@@ -34,19 +34,23 @@ const Country = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
         className={styles.searchInput}
       />
-      <div className={styles.flagSection} >
-        {filteredCountries.map((country, index) => (
-          <div key={index} className={styles.countryContainer} style={{ flexDirection: 'column' }}>
-            <img
-              src={country.flags?.png || ''}
-              alt="flag"
-              className={styles.countryImage}
-            />
-            <div className={styles.countryName}>
-              <h2>{country.name.common}</h2>
+      <div className={styles.flagSection} style={{ flexDirection: 'column' }}>
+        {filteredCountries.length > 0 ? (
+          filteredCountries.map((country, index) => (
+            <div key={index} className={styles.countryContainer}>
+              <img
+                src={country.flags?.png || ''}
+                alt={`flag`}
+                className={styles.countryImage}
+              />
+              <div className={styles.countryName}>
+                <h2>{country.name.common}</h2>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p>No ountry Match</p>
+        )}
       </div>
     </div>
   );
