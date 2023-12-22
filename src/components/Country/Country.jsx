@@ -29,30 +29,27 @@ const Country = () => {
     : [];
 
   return (
-    <div className="app p-6  flex flex-col items-center">
-      <h1 className="text-3xl font-bold mb-4">Country Information</h1>
+    <div className="p-6 flex flex-col items-center">
       <input
         type="text"
         placeholder="Search for a country..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="p-2 mb-4 border rounded-md"
+        className="p-2 mb-4 border w-72"
       />
       {filteredCountries.length > 0 ? (
         <div className="flex flex-wrap justify-center">
           {filteredCountries.map((country) => (
             <div
               key={country.cca3}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg mx-2 my-4 flex flex-col items-center"
+              className="bg-white p-6 rounded-lg border mx-2 my-4 flex flex-col items-center"
             >
               <img
                 src={country.flags.png}
-                alt={`Flag of ${country.name.common}`}
-                className="w-full h-32 object-cover mb-4 rounded-md"
+                alt={`flag`}
+                className="w-24 h-24 m-1 object-cover rounded-sm"
               />
-              <h2>{country.name.common}</h2>
-              <p>{`Capital: ${country.capital}`}</p>
-           
+              <h2 alt={`name`}className="text-base overflow-hidden whitespace-nowrap overflow-ellipsis">{country.name.common}</h2>
             </div>
           ))}
         </div>
