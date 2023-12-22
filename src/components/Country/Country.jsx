@@ -43,14 +43,16 @@ const Country = () => {
           {filteredCountries.map((country) => (
             <div
               key={country.cca3}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg mx-2 my-4 flex flex-col items-center w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64"
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg mx-2 my-4 flex flex-col items-center"
             >
               <img
                 src={country.flags.png}
                 alt={`Flag of ${country.name.common}`}
                 className="w-full h-32 object-cover mb-4 rounded-md"
               />
-              <h3 className="text-xl font-semibold mb-2">{country.name.common}</h3>
+              <h2>{country.name.common}</h2>
+              <p>{`Capital: ${country.capital}`}</p>
+           
             </div>
           ))}
         </div>
