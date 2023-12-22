@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Country = () => {
   const [apiData, setApiData] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [keyValue, setKeyValue] = useState(1); // Start with 1
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,33 +30,35 @@ const Country = () => {
     : [];
 
   return (
-    <div className="p-6 flex flex-col items-center">
-      <input
-        type="text"
-        placeholder="Search for a country..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="p-2 mb-4 border w-72"
-      />
-      {filteredCountries.length > 0 ? (
-        <div className="flex flex-wrap justify-center">
-          {filteredCountries.map((country) => (
-            <div
-              key={country.cca3}
-              className="bg-white p-6 rounded-lg border mx-2 my-4 flex flex-col items-center"
-            >
-              <img
-                src={country.flags.png}
-                alt={`flag`}
-                className="w-24 h-24 m-1 object-cover rounded-sm"
-              />
-              <h2 alt={`name`}className="text-base overflow-hidden whitespace-nowrap overflow-ellipsis">{country.name.common}</h2>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <p>No matching countries found.</p>
-      )}
+    <div className="p-6 flex flex-col items-center w-screen">
+      <div>
+        <input
+          type="text"
+          placeholder="Search for a country..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="p-2 border"
+        />
+      </div>
+      <div>
+        {filteredCountries.length > 0 ? (
+          <div className="flex flex-wrap justify-center">
+            {filteredCountries.map((country, index) => (
+              <div key={keyValue + index} className="bg-white p-6 border mx-2 my-4 flex flex-col items-center">
+               {/* { console.log(keyValue + index)} */}
+                <img
+                  src={country.flags.png}
+                  alt={`flag`}
+                  className="h-24 w-48"
+                />
+                <h2>{country.name.common}</h2>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>No matching countries found.</p>
+        )}
+      </div>
     </div>
   );
 };
