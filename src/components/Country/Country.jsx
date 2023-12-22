@@ -29,7 +29,7 @@ const Country = () => {
     : [];
 
   return (
-    <div className="app p-6 bg-gray-100 flex flex-col items-center">
+    <div className="app p-6  flex flex-col items-center">
       <h1 className="text-3xl font-bold mb-4">Country Information</h1>
       <input
         type="text"
