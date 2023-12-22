@@ -49,7 +49,7 @@ const Country = () => {
             </div>
           ))
         ) : (
-          <p>No ountry Match</p>
+          <p>No Country Match</p>
         )}
       </div>
     </div>
