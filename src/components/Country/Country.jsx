@@ -29,7 +29,7 @@ const Country = () => {
     <div className={styles.searchContainer} style={{ flexDirection: 'column' }}>
       <input
         type="text"
-        placeholder="Search for a country..."
+        placeholder="Search for a countries..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         className={styles.searchInput}
