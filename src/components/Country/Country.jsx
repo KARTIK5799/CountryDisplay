@@ -44,7 +44,7 @@ const Country = () => {
         {filteredCountries.length > 0 ? (
           <div className="flex flex-wrap justify-center">
             {filteredCountries.map((country, index) => (
-              <div key={keyValue + index} className="bg-white p-6 border mx-2 my-4 flex flex-col items-center">
+              <div key={keyValue + index} className="bg-white p-6 border mx-2 my-4 flex flex-col items-center ">
                {/* { console.log(keyValue + index)} */}
                 <img
                   src={country.flags.png}
