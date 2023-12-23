@@ -1,4 +1,4 @@
-/* Card Style */
+
 .cardStyle {
   width: 200px;
   border: 1px solid #ccc;
@@ -11,7 +11,7 @@
   justify-content: center;
 }
 
-/* Container Style */
+
 .containerStyle {
   display: flex;
   flex-wrap: wrap;
@@ -20,7 +20,7 @@
   padding: 80px 20px;
 }
 
-/* Header Style */
+
 .headerStyle {
   position: fixed;
   top: 0;
@@ -35,14 +35,14 @@
   align-items: center;
 }
 
-/* Search Style */
+
 .searchStyle {
   width: 50%;
   padding: 10px;
   font-size: 16px;
 }
 
-/* Image Style */
+
 .imageStyle {
   width: 100px;
   height: 100px;
