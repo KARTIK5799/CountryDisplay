@@ -5,6 +5,12 @@
     align-items: center;
     width: 100vw;
   }
+
+  .containerStyle{
+    display: flex;
+    
+
+  }
   .searchInput {
     padding: 10rem;
     width: 22rem;
