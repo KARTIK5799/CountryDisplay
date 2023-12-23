@@ -26,56 +26,35 @@ const Country = () => {
     : [];
 
   return (
-    <div className={styles.searchContainer} style={{ flexDirection: "column" }}>
-      <div>
+  
+    <>
+      <div className={styles.headerStyle}>
         <input
           type="text"
-          placeholder="Search for a countries..."
+          placeholder="Search for countries..."
+          className={styles.searchStyle}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className={styles.searchInput}
         />
       </div>
-      
-        
-        {filteredCountries.length > 0 ? (
-          <div className={styles.flagSection}>
-            {filteredCountries.map((country) => (
-            <div key={country.flags.png} className={styles.countryContainer} style={{ flexDirection: 'column' }}>
-              <img
-                src={country.flags.png}
-                alt={`Flag of ${country.name.common}`}
-                className={styles.countryImage}
-              />
-              <div className={styles.countryName}>
-                <h2>{country.name.common}</h2>
-              </div>
-            </div>
-             ))}
+      <div className={styles.containerStyle}>
+        {filteredCountries.map((country) => (
+          <div key={country.cca3} className={styles.cardStyle}>
+            <img
+              src={country.flags.png}
+              alt={`Flag of ${country.name.common}`}
+              className={styles.imageStyle}
+            />
+            <h2>{country.name.common}</h2>
           </div>
-
-
-
-
-          // <div className={styles.flagSection}>
-          //   {filteredCountries.map((country) => (
-          //     <div key={country.cca3} className={styles.countryContainer}>
-          //       <img
-          //         src={country.flags.png}
-          //         alt={`Flag of ${country.name.common}`}
-          //         className={styles.countryImage}
-          //       />
-          //       <h2>{country.name.common}</h2>
-          //     </div>
-          //   ))}
-          // </div>
-        ) : (
-          ""
-        )}
-    
-          </div> 
-    
+        ))}
+      </div>
+    </>
   );
-};
+}
+
+    
+
+
 
 export default Country;
