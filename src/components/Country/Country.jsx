@@ -38,31 +38,31 @@ const Country = () => {
       </div>
       
         {filteredCountries.length > 0 ? (
-          // filteredCountries.map((country) => (
-          //   <div key={country.flags.png} className={styles.countryContainer} style={{ flexDirection: 'column' }}>
-          //     <img
-          //       src={country.flags.png}
-          //       alt="flag"
-          //       className={styles.countryImage}
-          //     />
-          //     <div className={styles.countryName}>
-          //       <h2>{country.name.common}</h2>
-          //     </div>
-          //   </div>
-          // ))
-
-          <div className={styles.flagSection}>
-            {filteredCountries.map((country) => (
-              <div key={country.cca3} className={styles.countryContainer}>
-                <img
-                  src={country.flags.png}
-                  alt={`Flag of ${country.name.common}`}
-                  className={styles.countryImage}
-                />
+          filteredCountries.map((country) => (
+            <div key={country.flags.png} className={styles.countryContainer} style={{ flexDirection: 'column' }}>
+              <img
+                src={country.flags.png}
+                alt="flag"
+                className={styles.countryImage}
+              />
+              <div className={styles.countryName}>
                 <h2>{country.name.common}</h2>
               </div>
-            ))}
-          </div>
+            </div>
+          ))
+
+          // <div className={styles.flagSection}>
+          //   {filteredCountries.map((country) => (
+          //     <div key={country.cca3} className={styles.countryContainer}>
+          //       <img
+          //         src={country.flags.png}
+          //         alt={`Flag of ${country.name.common}`}
+          //         className={styles.countryImage}
+          //       />
+          //       <h2>{country.name.common}</h2>
+          //     </div>
+          //   ))}
+          // </div>
         ) : (
           ""
         )}
