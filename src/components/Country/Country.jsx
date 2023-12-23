@@ -37,6 +37,7 @@ const Country = () => {
         />
       </div>
       
+        <div className={styles.flagSection}>
         {filteredCountries.length > 0 ? (
           filteredCountries.map((country) => (
             <div key={country.flags.png} className={styles.countryContainer} style={{ flexDirection: 'column' }}>
@@ -49,7 +50,7 @@ const Country = () => {
                 <h2>{country.name.common}</h2>
               </div>
             </div>
-          ))
+             ))
 
           // <div className={styles.flagSection}>
           //   {filteredCountries.map((country) => (
@@ -66,7 +67,8 @@ const Country = () => {
         ) : (
           ""
         )}
-      </div>
+    
+          </div>  </div>
     
   );
 };
